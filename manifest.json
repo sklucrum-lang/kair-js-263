@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "KAIR",
+  "version": "3.43",
+  "description": "KAIR",
+  "permissions": ["storage", "unlimitedStorage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.pocketoption.com/*",
+        "*://pocketoption.com/*",
+        "*://*.po.trade/*",
+        "*://po.trade/*",
+        "*://*.po.finance/*",
+        "*://*.pocket-option.com/*"
+      ],
+      "js": ["kair.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
