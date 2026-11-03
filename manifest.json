@@ -1,20 +1,51 @@
 {
   "manifest_version": 3,
-  "name": "KAIR",
-  "version": "3.43",
-  "description": "KAIR",
-  "permissions": ["storage", "unlimitedStorage"],
+  "name": "K. A. I. R. Statock тема",
+  "version": "3.42",
+  "description": "Тема Statock + панель K. A. I. R.: калькулятор, Фибо, стратегия, журнал, сигнал KAIR 2.40 (только чтение котировок). Без сети и без автокликов.",
+  "permissions": ["storage"],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "content_scripts": [
     {
       "matches": [
         "*://*.pocketoption.com/*",
         "*://pocketoption.com/*",
         "*://*.po.trade/*",
-        "*://po.trade/*",
-        "*://*.po.finance/*",
-        "*://*.pocket-option.com/*"
+        "*://po.trade/*"
       ],
-      "js": ["kair.js"],
+      "css": [
+        "statock.css",
+        "ui.css"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://*.pocketoption.com/*",
+        "*://pocketoption.com/*",
+        "*://*.po.trade/*",
+        "*://po.trade/*"
+      ],
+      "js": [
+        "kair.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "*://*.pocketoption.com/*",
+        "*://pocketoption.com/*",
+        "*://*.po.trade/*",
+        "*://po.trade/*"
+      ],
+      "js": [
+        "kair.js"
+      ],
       "run_at": "document_start"
     }
   ]
